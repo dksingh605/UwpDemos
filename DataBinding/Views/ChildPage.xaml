@@ -17,11 +17,18 @@
     <Page.Resources>
         <converters:ValueToString x:Name="DoubleToString"/>
     </Page.Resources>
-    <Grid VerticalAlignment="Center">
+    <Grid VerticalAlignment="Center" Background="Gray" CornerRadius="12">
        
         <StackPanel Margin="25">
             <TextBlock Text="Child Page " FontWeight="Bold" FontSize="16"/>
-            <TextBlock Text="Value set from here should populate simultaneously in layout Root Element."/>
+            <TextBlock TextWrapping="Wrap" >
+             <Run Text="This is poc to pass data from layout to Child page and from child to layout page.This POC was made by me,with very much help of Martin.I will Appritiate"/>
+                <Hyperlink NavigateUri="https://stackoverflow.com/users/732221/martin-zikmund">Martin Zikmund</Hyperlink>
+              <Run Text="Suggestion's in this work"/>
+            </TextBlock>
+            <TextBlock>
+                <Hyperlink NavigateUri="https://stackoverflow.com/questions/59713598/how-to-update-layout-page-content-from-child-using-mvvm-in-uwp/59714336?noredirect=1#comment105645995_59714336">StackOverflow Disccusion</Hyperlink>
+            </TextBlock>
             <TextBlock>
             <Run  Text="Value of slider now: "/>
             <Run Text="{x:Bind ChildViewModel.SliderValue,Mode=OneWay}"/>
