@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="DataBinding.Views.ChildPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataBinding.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:vm="using:DataBinding.ViewModel"
+    xmlns:converters="using:DataBinding.Converters"
+    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <vm:ChildViewModel x:Name="ChildViewModel"/>
+    </Page.DataContext>
+    <Page.Resources>
+        <converters:ValueToString x:Name="DoubleToString"/>
+    </Page.Resources>
+    <Grid VerticalAlignment="Center">
+       
+        <StackPanel Margin="25">
+            <TextBlock Text="Child Page " FontWeight="Bold" FontSize="16"/>
+            <TextBlock Text="Value set from here should populate simultaneously in layour Root Element."/>
+            <TextBlock>
+            <Run  Text="Value of slider now: "/>
+            <Run Text="{x:Bind ChildViewModel.EllipseDimention}"/>
+            </TextBlock>
+            <Ellipse Stroke="Black" Fill="Purple" Width="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}" Height="{x:Bind ChildViewModel.Radius,Mode=TwoWay}"/>
+            <TextBox MaxWidth="100" HorizontalAlignment="Left" 
+                     Text="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}"/>
+            <Slider Value="{x:Bind ChildViewModel.SliderValue,Mode=TwoWay}" Maximum="100"  x:Name="ValueSlider"/>
+            <!--Want to pass data from layout to child also-->
+            <!--<TextBlock>
+                <Run Text="Layout Page Control Data to child page"/>
+                <Run Text="{Binding Radius,ElementName=RootControl }"/>
+            </TextBlock>-->
+        </StackPanel>
+    </Grid>
+</Page>

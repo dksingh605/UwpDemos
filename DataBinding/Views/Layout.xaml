@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="DataBinding.Views.Layout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataBinding.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="using:DataBinding.UserControls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="550"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <TextBlock Text="Main Layout Page"/>
+            <Button Content="Go To Child Page" Click="Button_Click"/>
+            <controls:RootControl Radius="100" x:Name="RootControl"/>
+        </StackPanel>
+        <Frame Grid.Column="1" x:Name="LayoutPageFrame"/>
+    </Grid>
+</Page>
