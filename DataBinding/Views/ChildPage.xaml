@@ -25,7 +25,7 @@
             <Run  Text="Value of slider now: "/>
             <Run Text="{x:Bind ChildViewModel.EllipseDimention}"/>
             </TextBlock>
-            <Ellipse Stroke="Black" Fill="Purple" Width="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}" Height="{x:Bind ChildViewModel.Radius,Mode=TwoWay}"/>
+            <Ellipse Stroke="Black" Fill="Purple" Width="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}" Height="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}"/>
             <TextBox MaxWidth="100" HorizontalAlignment="Left" 
                      Text="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}"/>
             <Slider Value="{x:Bind ChildViewModel.SliderValue,Mode=TwoWay}" Maximum="100"  x:Name="ValueSlider"/>
