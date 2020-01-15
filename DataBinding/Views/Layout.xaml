@@ -9,7 +9,7 @@
     xmlns:controls="using:DataBinding.UserControls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="LayoutRootGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="550"/>
@@ -20,7 +20,7 @@
             <controls:RootControl 
                 Radius="{Binding ElementName=LayoutPageFrame, Path=Content.DataContext.SliderValue, Mode=OneWay}"
                 x:Name="RootControl"/>
-            <TextBlock Text="{Binding ElementName=LayoutPageFrame, Path=Content.DataContext.SliderValue, Mode=OneWay}"/>
+            <!--<TextBox Text="{Binding Radius,ElementName=RootControl, Mode=TwoWay}" Width="50" HorizontalAlignment="Left"/>-->
         </StackPanel>
         <Frame Grid.Column="1" x:Name="LayoutPageFrame" />
     </Grid>

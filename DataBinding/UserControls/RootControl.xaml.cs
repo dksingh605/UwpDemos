@@ -31,7 +31,27 @@ namespace DataBinding.UserControls
 			set { SetValue(RadiusProperty, value); }
 		}
 		public static readonly DependencyProperty RadiusProperty =
-			DependencyProperty.Register("Radius", typeof(double), typeof(RootControl), new PropertyMetadata(0.0));
-		
+			DependencyProperty.Register("Radius", typeof(double), typeof(RootControl), new PropertyMetadata(10.0));
+
+		private void WPath_KeyDown(object sender, KeyRoutedEventArgs e)
+		{
+
+		}
+
+		private void WPath_PointerPressed(object sender, PointerRoutedEventArgs e)
+		{
+
+		}
+
+		private void WPath_PointerMoved(object sender, PointerRoutedEventArgs e)
+		{
+
+		}
+
+		private void WPath_PointerReleased(object sender, PointerRoutedEventArgs e)
+		{
+			//var x = sender as Path;
+			
+		}
 	}
 }

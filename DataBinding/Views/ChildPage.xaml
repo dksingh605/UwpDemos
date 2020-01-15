@@ -1,5 +1,6 @@
 ﻿<Page
     x:Class="DataBinding.Views.ChildPage"
+    x:Name="ChildPages"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DataBinding.Views"
@@ -29,6 +30,7 @@
             <TextBox MaxWidth="100" HorizontalAlignment="Left" 
                      Text="{x:Bind ChildViewModel.SliderValue,Mode=OneWay}"/>
             <Slider Value="{x:Bind ChildViewModel.SliderValue,Mode=TwoWay}" Maximum="100"  x:Name="ValueSlider"/>
+            <Slider Value="{Binding ElementName=RootControl, Path=DataContext.Radius,Mode=TwoWay}" Maximum="100"  x:Name="ValueSliderW"/>
             <!--Want to pass data from layout to child also-->
             <!--<TextBlock>
                 <Run Text="Layout Page Control Data to child page"/>

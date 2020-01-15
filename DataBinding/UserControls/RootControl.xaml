@@ -9,9 +9,32 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-
-    <Grid>
-        <Ellipse Fill="MediumPurple" Width="{x:Bind Radius, Mode=OneWay}" 
-            Height="{x:Bind Radius, Mode=OneWay}"/>
+    
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!--<Border x:Name="rootBorder" BorderThickness="6" BorderBrush="Black"
+                Width="{x:Bind Radius, Mode=OneWay}" 
+            Height="{x:Bind Radius, Mode=OneWay}">
+            
+        <Ellipse Fill="MediumPurple" Width="{x:Bind Radius, Mode=OneWay}"  
+            Height="{x:Bind Radius, Mode=OneWay}" />
+        </Border>-->
+        
+            <Path x:Name="WPath"  Stroke="Red" StrokeThickness="2"
+                   KeyDown="WPath_KeyDown"
+                  PointerPressed="WPath_PointerPressed"
+                  PointerMoved="WPath_PointerMoved"
+                  PointerReleased="WPath_PointerReleased"
+                  >
+            <Path.Data>
+                <EllipseGeometry  RadiusX="{x:Bind Radius, Mode=OneWay}" 
+                                  RadiusY="{x:Bind Radius, Mode=OneWay}" />
+                    
+            </Path.Data>
+            <!--<Path.RenderTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </Path.RenderTransform>-->
+        </Path>
+        <TextBox Text="{x:Bind Radius, Mode=TwoWay}" Width="50" HorizontalAlignment="Left"/>
     </Grid>
+  
 </UserControl>
