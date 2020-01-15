@@ -26,5 +26,6 @@ namespace DataBinding.Views
 		{
 			this.InitializeComponent();
 		}
+		
 	}
 }

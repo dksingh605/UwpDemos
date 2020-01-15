@@ -9,18 +9,7 @@ namespace DataBinding.ViewModel
 {
 	public class ChildViewModel:ViewModelBase
 	{
-		private int _sliderValue = 25;
-		public int EllipseDimention
-		{
-			get
-			{
-				return _sliderValue;
-			}
-			set
-			{
-				Set(ref _sliderValue, value, "SliderValue");
-			}
-		}
+		private int _sliderValue = 25;		
 	
 		public int SliderValue
 		{
@@ -30,7 +19,7 @@ namespace DataBinding.ViewModel
 			}
 			set
 			{
-				Set(ref _sliderValue, value, "EllipseDimention");			
+				Set(ref _sliderValue, value);			
 
 			}
 		}

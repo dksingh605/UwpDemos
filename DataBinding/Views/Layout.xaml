@@ -17,8 +17,11 @@
         <StackPanel Grid.Column="0" Orientation="Vertical">
             <TextBlock Text="Main Layout Page"/>
             <Button Content="Go To Child Page" Click="Button_Click"/>
-            <controls:RootControl Radius="100" x:Name="RootControl"/>
+            <controls:RootControl 
+                Radius="{Binding ElementName=LayoutPageFrame, Path=Content.DataContext.SliderValue, Mode=OneWay}"
+                x:Name="RootControl"/>
+            <TextBlock Text="{Binding ElementName=LayoutPageFrame, Path=Content.DataContext.SliderValue, Mode=OneWay}"/>
         </StackPanel>
-        <Frame Grid.Column="1" x:Name="LayoutPageFrame"/>
+        <Frame Grid.Column="1" x:Name="LayoutPageFrame" />
     </Grid>
 </Page>

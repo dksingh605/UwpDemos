@@ -20,19 +20,19 @@
        
         <StackPanel Margin="25">
             <TextBlock Text="Child Page " FontWeight="Bold" FontSize="16"/>
-            <TextBlock Text="Value set from here should populate simultaneously in layour Root Element."/>
+            <TextBlock Text="Value set from here should populate simultaneously in layout Root Element."/>
             <TextBlock>
             <Run  Text="Value of slider now: "/>
-            <Run Text="{x:Bind ChildViewModel.EllipseDimention}"/>
+            <Run Text="{x:Bind ChildViewModel.SliderValue,Mode=OneWay}"/>
             </TextBlock>
-            <Ellipse Stroke="Black" Fill="Purple" Width="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}" Height="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}"/>
+            <Ellipse Stroke="Black" Fill="Purple" Width="{x:Bind ChildViewModel.SliderValue,Mode=OneWay}" Height="{x:Bind ChildViewModel.SliderValue,Mode=OneWay}"/>
             <TextBox MaxWidth="100" HorizontalAlignment="Left" 
-                     Text="{x:Bind ChildViewModel.EllipseDimention,Mode=TwoWay}"/>
+                     Text="{x:Bind ChildViewModel.SliderValue,Mode=OneWay}"/>
             <Slider Value="{x:Bind ChildViewModel.SliderValue,Mode=TwoWay}" Maximum="100"  x:Name="ValueSlider"/>
             <!--Want to pass data from layout to child also-->
             <!--<TextBlock>
                 <Run Text="Layout Page Control Data to child page"/>
-                <Run Text="{Binding Radius,ElementName=RootControl }"/>
+                <Run Text="{Binding Path=Content,ElementName=RootControl }"/>
             </TextBlock>-->
         </StackPanel>
     </Grid>

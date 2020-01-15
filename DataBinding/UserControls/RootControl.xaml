@@ -11,7 +11,7 @@
     d:DesignWidth="400">
 
     <Grid>
-        <Ellipse Fill="MediumPurple" Width="{Binding Radius,Mode=TwoWay,ElementName=MainRootControl}" 
-                 Height="{Binding Radius,Mode=TwoWay,ElementName=MainRootControl}"/>
+        <Ellipse Fill="MediumPurple" Width="{x:Bind Radius, Mode=OneWay}" 
+            Height="{x:Bind Radius, Mode=OneWay}"/>
     </Grid>
 </UserControl>

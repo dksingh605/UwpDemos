@@ -29,6 +29,7 @@ namespace DataBinding.Views
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
+		
 			LayoutPageFrame.Navigate(typeof(ChildPage));
 		}
 	}

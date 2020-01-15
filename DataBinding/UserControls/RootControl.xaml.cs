@@ -18,27 +18,20 @@ using Windows.UI.Xaml.Navigation;
 
 namespace DataBinding.UserControls
 {
-	public sealed partial class RootControl : UserControl, INotifyPropertyChanged
+	public sealed partial class RootControl : UserControl
 	{
 		public RootControl()
 		{
 			this.InitializeComponent();
-		}
-		private double _btnWidth = 50;
+		}		
 
 		public double Radius
 		{
-			get { return _btnWidth; }
-
-			set
-			{
-				_btnWidth = value;
-				if (PropertyChanged != null)
-				{
-					PropertyChanged(this, new PropertyChangedEventArgs("Radius"));
-				}
-			}
+			get { return (double)GetValue(RadiusProperty); }
+			set { SetValue(RadiusProperty, value); }
 		}
-		public event PropertyChangedEventHandler PropertyChanged;
+		public static readonly DependencyProperty RadiusProperty =
+			DependencyProperty.Register("Radius", typeof(double), typeof(RootControl), new PropertyMetadata(0.0));
+		
 	}
 }
