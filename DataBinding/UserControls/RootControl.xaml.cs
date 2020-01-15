@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBinding.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -31,7 +32,7 @@ namespace DataBinding.UserControls
 			set { SetValue(RadiusProperty, value); }
 		}
 		public static readonly DependencyProperty RadiusProperty =
-			DependencyProperty.Register("Radius", typeof(double), typeof(RootControl), new PropertyMetadata(10.0));
+			DependencyProperty.Register("Radius", typeof(double), typeof(RootControl), new PropertyMetadata((double)new ChildViewModel().SliderValue));
 
 		private void WPath_KeyDown(object sender, KeyRoutedEventArgs e)
 		{
