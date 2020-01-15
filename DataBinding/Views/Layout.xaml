@@ -18,7 +18,7 @@
             <TextBlock Text="Main Layout Page"/>
             <Button Content="Go To Child Page" Click="Button_Click"/>
             <controls:RootControl 
-                Radius="{Binding ElementName=LayoutPageFrame, Path=Content.DataContext.SliderValue, Mode=OneWay}"
+                Radius="{Binding ElementName=LayoutPageFrame, Path=Content.DataContext.SliderValue, Mode=TwoWay}"
                 x:Name="RootControl"/>
             <!--<TextBox Text="{Binding Radius,ElementName=RootControl, Mode=TwoWay}" Width="50" HorizontalAlignment="Left"/>-->
         </StackPanel>
